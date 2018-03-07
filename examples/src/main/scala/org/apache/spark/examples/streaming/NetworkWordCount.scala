@@ -43,6 +43,7 @@ object NetworkWordCount {
     StreamingExamples.setStreamingLogLevels()
 
     // Create the context with a 1 second batch size
+    //如果在setAppName前加setMaster("local[2]"). 表示需要2cores
     val sparkConf = new SparkConf().setAppName("NetworkWordCount")
     val ssc = new StreamingContext(sparkConf, Seconds(1))
 
