@@ -1,5 +1,5 @@
 /*
-简单点的
+简单点的  TCP source
 */
 
 import org.apache.spark._
@@ -65,6 +65,8 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
  * and then run the example
  *    `$ bin/run-example org.apache.spark.examples.streaming.NetworkWordCount localhost 9999`
  */
+//TCP source
+
 object NetworkWordCount {
   def main(args: Array[String]) {
     if (args.length < 2) {
