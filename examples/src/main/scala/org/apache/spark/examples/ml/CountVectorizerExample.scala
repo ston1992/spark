@@ -15,6 +15,10 @@
  * limitations under the License.
  */
 
+/*
+* CountVectorizer类会将文本中的词语转换为词频矩阵，例如矩阵中包含一个元素a[i][j]，它表示j词在i类文本下的词频
+*/
+
 // scalastyle:off println
 package org.apache.spark.examples.ml
 

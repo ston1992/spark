@@ -19,6 +19,10 @@
 package org.apache.spark.examples.ml
 
 // $example on$
+
+/*
+* Binarizer类和binarize方法根据指定的阈值将特征二值化，小于等于阈值的，将特征值赋予0，大于特征值的赋予1，其阈值threshold默认都为0.
+* */
 import org.apache.spark.ml.feature.Binarizer
 // $example off$
 import org.apache.spark.sql.SparkSession

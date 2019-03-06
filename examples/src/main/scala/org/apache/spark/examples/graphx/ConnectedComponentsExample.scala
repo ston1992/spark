@@ -31,6 +31,7 @@ import org.apache.spark.sql.SparkSession
  * GraphX contains an implementation of the algorithm in the
  * [`ConnectedComponents` object][ConnectedComponents],
  * and we compute the connected components of the example social network dataset.
+  * 连通子图分析：寻找最小数量的相互连通的子图 （可以用来分群）
  *
  * Run with
  * {{{

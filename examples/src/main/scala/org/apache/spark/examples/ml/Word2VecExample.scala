@@ -57,3 +57,15 @@ object Word2VecExample {
   }
 }
 // scalastyle:on println
+
+/*
+结果：
+Text: [Hi, I, heard, about, Spark] =>
+Vector: [-0.008142343163490296,0.02051363289356232,0.03255096450448036]
+
+Text: [I, wish, Java, could, use, case, classes] =>
+Vector: [0.043090314205203734,0.035048123182994974,0.023512658663094044]
+
+Text: [Logistic, regression, models, are, neat] =>
+Vector: [0.038572299480438235,-0.03250147425569594,-0.01552378609776497]
+*/

@@ -38,11 +38,10 @@ object TfIdfExample {
       (1.0, "Logistic regression models are neat")
     )).toDF("label", "sentence")
 
-    val tokenizer = new Tokenizer().setInputCol("sentence").setOutputCol("words")
+    val tokenizer = new Tokenizer().setInputCol("sentence").setOutputCol("words")  //对象为汉语时需要改变分词的逻辑，或者说，直接把分词后的对象作为第一步的处理对象（即不再需要分词）
     val wordsData = tokenizer.transform(sentenceData)
 
-    val hashingTF = new HashingTF()
-      .setInputCol("words").setOutputCol("rawFeatures").setNumFeatures(20)
+    val hashingTF = new HashingTF().setInputCol("words").setOutputCol("rawFeatures").setNumFeatures(20)
 
     val featurizedData = hashingTF.transform(wordsData)
     // alternatively, CountVectorizer can also be used to get term frequency vectors
@@ -58,3 +57,22 @@ object TfIdfExample {
   }
 }
 // scalastyle:on println
+
+/*
+结果
++-----+--------------------+
+|label|            features|
++-----+--------------------+
+|  0.0|(20,[0,5,9,17],[0...|
+|  0.0|(20,[2,7,9,13,15]...|
+|  1.0|(20,[4,6,13,15,18...|
++-----+--------------------+
+如果show words和rawFeatures
++-----+--------------------+--------------------+--------------------+
+|label|               words|         rawFeatures|            features|
++-----+--------------------+--------------------+--------------------+
+|  0.0|[hi, i, heard, ab...|(20,[0,5,9,17],[1...|(20,[0,5,9,17],[0...|
+|  0.0|[i, wish, java, c...|(20,[2,7,9,13,15]...|(20,[2,7,9,13,15]...|
+|  1.0|[logistic, regres...|(20,[4,6,13,15,18...|(20,[4,6,13,15,18...|
++-----+--------------------+--------------------+--------------------+
+*/

@@ -18,6 +18,7 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
+//傅立叶变换
 // $example on$
 import org.apache.spark.ml.feature.DCT
 import org.apache.spark.ml.linalg.Vectors

@@ -27,6 +27,7 @@ import org.apache.spark.sql.SparkSession
 
 /**
  * An example for computing correlation matrix.
+  * 不同特征之间的相关性分析
  * Run with
  * {{{
  * bin/run-example ml.CorrelationExample

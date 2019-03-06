@@ -25,6 +25,7 @@ import org.apache.spark.sql.SparkSession
 
 /**
  * A PageRank example on social network dataset
+  * pagerank可以用来做节点重要性的判断
  * Run with
  * {{{
  * bin/run-example graphx.PageRankExample
@@ -59,3 +60,13 @@ object PageRankExample {
   }
 }
 // scalastyle:on println
+
+/*
+结果：
+(justinbieber,0.15007622780470478)
+(matei_zaharia,0.7017164142469724)
+(ladygaga,1.3907556008752426)
+(BarackObama,1.4596227918476916)
+(jeresig,0.9998520559494657)
+(odersky,1.2979769092759237)
+*/

@@ -24,6 +24,7 @@ import org.apache.spark.ml.feature.Bucketizer
 import org.apache.spark.sql.SparkSession
 /**
  * An example for Bucketizer.
+  * 将连续的特征列转换成特征桶(buckets)列。这些桶由用户指定。
  * Run with
  * {{{
  * bin/run-example ml.BucketizerExample

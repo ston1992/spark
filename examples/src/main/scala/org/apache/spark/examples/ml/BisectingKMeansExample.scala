@@ -26,6 +26,9 @@ import org.apache.spark.sql.SparkSession
 
 /**
  * An example demonstrating bisecting k-means clustering.
+  * 二分K均值算法是一种层次聚类算法，使用自顶向下的逼近：所有的观察值开始是一个簇，递归地向下一个层级分裂。
+  * 分裂依据为选择能最大程度降低聚类代价函数（也就是误差平方和）的簇划分为两个簇。以此进行下去，直到簇的数目等于用户给定的数目k为止。
+  * 二分K均值常常比传统K均值算法有更快的计算速度，但产生的簇群与传统K均值算法往往也是不同的。
  * Run with
  * {{{
  * bin/run-example ml.BisectingKMeansExample

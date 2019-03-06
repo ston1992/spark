@@ -23,6 +23,15 @@ import org.apache.spark.ml.feature.NGram
 // $example off$
 import org.apache.spark.sql.SparkSession
 
+/*
+* N-Gram是一种基于统计语言模型的算法。它的基本思想是将文本里面的内容按照字节进行大小为N的滑动窗口操作，形成了长度是N的字节片段序列。
+* https://zhuanlan.zhihu.com/p/32829048
+* 可应用点：
+* 1、搜索词自动联想
+* 2、ASR翻译纠错
+*/
+
+
 object NGramExample {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession
@@ -47,3 +56,13 @@ object NGramExample {
   }
 }
 // scalastyle:on println
+/*
+输出
++------------------------------------------------------------------+
+|ngrams                                                            |
++------------------------------------------------------------------+
+|[Hi I, I heard, heard about, about Spark]                         |
+|[I wish, wish Java, Java could, could use, use case, case classes]|
+|[Logistic regression, regression models, models are, are neat]    |
++------------------------------------------------------------------+
+*/

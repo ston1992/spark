@@ -28,6 +28,7 @@ import org.apache.spark.sql.SparkSession
  * to important relationships and users, run page-rank on the sub-graph, and
  * then finally return attributes associated with the top users.
  * This example do all of this in just a few lines with GraphX.
+  * 从text文件中创建graph，找到最重要的关系和用户子图，在子图中运行page-rank，返回与top users相关的属性.
  *
  * Run with
  * {{{

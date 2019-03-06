@@ -18,6 +18,13 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
+
+/*
+* IndexToString maps a column of label indices back to a column containing the original labels as strings.
+* StringIndexer是指把一组字符型标签编码成一组标签索引，索引的范围为0到标签数量，索引构建的顺序为标签的频率，优先编码频率较大的标签，所以出现频率最高的标签为0号。如果输入的是数值型的，我们会把它转化成字符型，然后再对其进行编码。
+* 这个算法在搜索等需要创建索引的场景下很实用
+*/
+
 // $example on$
 import org.apache.spark.ml.attribute.Attribute
 import org.apache.spark.ml.feature.{IndexToString, StringIndexer}
@@ -38,7 +45,10 @@ object IndexToStringExample {
       (2, "c"),
       (3, "a"),
       (4, "a"),
-      (5, "c")
+      (5, "c"),
+      (6, "c"),
+      (7, "c"),
+      (8, "c")
     )).toDF("id", "category")
 
     val indexer = new StringIndexer()
@@ -70,3 +80,34 @@ object IndexToStringExample {
   }
 }
 // scalastyle:on println
+
+/*
+result:
++---+--------+-------------+
+| id|category|categoryIndex|
++---+--------+-------------+
+|  0|       a|          1.0|
+|  1|       b|          2.0|
+|  2|       c|          0.0|
+|  3|       a|          1.0|
+|  4|       a|          1.0|
+|  5|       c|          0.0|
+|  6|       c|          0.0|
+|  7|       c|          0.0|
+|  8|       c|          0.0|
++---+--------+-------------+
+
++---+-------------+----------------+
+| id|categoryIndex|originalCategory|
++---+-------------+----------------+
+|  0|          1.0|               a|
+|  1|          2.0|               b|
+|  2|          0.0|               c|
+|  3|          1.0|               a|
+|  4|          1.0|               a|
+|  5|          0.0|               c|
+|  6|          0.0|               c|
+|  7|          0.0|               c|
+|  8|          0.0|               c|
++---+-------------+----------------+
+*/

@@ -17,6 +17,8 @@
 
 package org.apache.spark.examples.ml
 
+
+//特征提取技术
 // $example on$
 import org.apache.spark.ml.feature.FeatureHasher
 // $example off$

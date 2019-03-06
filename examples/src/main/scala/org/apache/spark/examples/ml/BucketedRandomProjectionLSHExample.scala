@@ -27,9 +27,23 @@ import org.apache.spark.sql.functions.col
 
 /**
  * An example demonstrating BucketedRandomProjectionLSH.
- * Run with:
+  * LSH是大规模机器学习中常用的随机算法和哈希技术，包括聚类和近似最近邻搜索。
+  * 实现 LSH 之前，Uber筛选行程的算法复杂度为 N^2，虽然精度很高，但是太耗费资源。LSH的总体思路是使用一系列函数（称为 LSH 族）将数据点哈希到桶(buckets)中，使距离较近的数据点位于同一个桶中的概率较高，而距离很远的数据点在不同的桶里。因此, LSH 算法能使具有不同程度重叠行程的识别更为容易。
+  * 在Spark 2.1中，有两个LSH估计器：
+  *1、 基于欧几里德距离的BucketedRandomProjectionLSH【它研究的对象是向量，向量是有方向的。】
+  *2、 基于Jaccard距离的MinHashLSH   【它研究的对象，其实是集合而不是向量，集合没有方向。】
+    * Jaccard相似指数用来度量两个集合之间的相似性，它被定义为两个集合交集的元素个数除以并集的元素个数。
+    * Jaccard距离用来度量两个集合之间的差异性，它是Jaccard的相似系数的补集，被定义为1减去Jaccard相似系数。
+    * https://baike.baidu.com/item/%E6%9D%B0%E5%8D%A1%E5%BE%B7%E8%B7%9D%E7%A6%BB/15416212?fr=aladdin
+    * 关于各种距离概念的介绍：https://blog.csdn.net/mpk_no1/article/details/72935442
+  * 大量应用包括：
+  * 》近似重复的检测： LSH 通常用于对大量文档，网页和其他文件进行去重处理。
+  * 》全基因组的相关研究：生物学家经常使用 LSH 在基因组数据库中鉴定相似的基因表达。
+  * 》大规模的图片搜索： Google 使用 LSH 和 PageRank 来构建他们的图片搜索技术VisualRank。
+  * 》音频/视频指纹识别：在多媒体技术中，LSH 被广泛用于 A/V 数据的指纹识别。
+  * Run with:
  *   bin/run-example ml.BucketedRandomProjectionLSHExample
- */
+  **/
 object BucketedRandomProjectionLSHExample {
   def main(args: Array[String]): Unit = {
     // Creates a SparkSession

@@ -18,6 +18,13 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
+/*
+*特征缩放
+* 因为在原始的资料中，各变数的范围大不相同。对于某些机器学习的算法，若没有做过标准化，目标函数会无法适当的运作。
+* 举例来说，多数的分类器利用两点间的距离计算两点的差异， 若其中一个特征具有非常广的范围，那两点间的差异就会被该特征左右，因此，所有的特征都该被标准化，这样才能大略的使各特征依比例影响距离。
+* 另外一个做特征缩放的理由是他能使加速梯度下降法的收敛。
+*/
+
 // $example on$
 import org.apache.spark.ml.feature.StandardScaler
 // $example off$

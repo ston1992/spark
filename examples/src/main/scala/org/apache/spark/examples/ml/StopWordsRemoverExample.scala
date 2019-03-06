@@ -18,6 +18,8 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
+/*停用词过滤*/
+
 // $example on$
 import org.apache.spark.ml.feature.StopWordsRemover
 // $example off$

@@ -28,6 +28,7 @@ import org.apache.spark.graphx.util.GraphGenerators
  * The SynthBenchmark application can be used to run various GraphX algorithms on
  * synthetic log-normal graphs.  The intent of this code is to enable users to
  * profile the GraphX system without access to large graph datasets.
+  * 综合基准性能测试
  */
 object SynthBenchmark {
 

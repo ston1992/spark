@@ -26,6 +26,8 @@ import org.apache.spark.sql.SparkSession
 
 /**
  * An example demonstrating FP-Growth.
+  * 挖掘频繁项集
+  * https://www.ibm.com/developerworks/cn/analytics/library/machine-learning-hands-on2-fp-growth/index.html
  * Run with
  * {{{
  * bin/run-example ml.FPGrowthExample

@@ -23,6 +23,8 @@ import org.apache.spark.ml.feature.Imputer
 import org.apache.spark.sql.SparkSession
 
 /**
+  * The Imputer transformer completes missing values in a dataset,
+  * 空值填充
  * An example demonstrating Imputer.
  * Run with:
  *   bin/run-example ml.ImputerExample

@@ -18,6 +18,15 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
+/*
+卡方特征选择
+它适用于带有类别特征的标签数据。ChiSqSelector根据独立卡方检验，然后选取类别标签主要依赖的特征。它类似于选取最有预测能力的特征。它支持三种特征选取方法：
+1、numTopFeatures：通过卡方检验选取最具有预测能力的Top(num)个特征；
+2、percentile：类似于上一种方法，但是选取一小部分特征而不是固定(num)个特征；
+3、fpr:选择P值低于门限值的特征，这样就可以控制false positive rate来进行特征选择；
+*/
+
+
 // $example on$
 import org.apache.spark.ml.feature.ChiSqSelector
 import org.apache.spark.ml.linalg.Vectors

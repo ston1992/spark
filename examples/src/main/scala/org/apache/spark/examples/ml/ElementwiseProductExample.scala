@@ -15,6 +15,8 @@
  * limitations under the License.
  */
 
+//元素智能乘积，对每一个输入向量乘以一个给定的“权重”向量。换句话说，就是通过一个乘子对数据集的每一列进行缩放。
+
 // scalastyle:off println
 package org.apache.spark.examples.ml
 

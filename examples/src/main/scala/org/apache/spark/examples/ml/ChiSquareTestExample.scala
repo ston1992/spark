@@ -26,6 +26,8 @@ import org.apache.spark.sql.SparkSession
 
 /**
  * An example for Chi-square hypothesis testing.
+  * 对特征进行卡方检验
+  * 主要是比较两个及两个以上样本率( 构成比）以及两个分类变量的关联性分析。其根本思想就是在于比较理论频数和实际频数的吻合程度或拟合优度问题。
  * Run with
  * {{{
  * bin/run-example ml.ChiSquareTestExample

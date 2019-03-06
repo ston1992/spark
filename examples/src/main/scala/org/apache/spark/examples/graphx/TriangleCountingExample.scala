@@ -29,6 +29,8 @@ import org.apache.spark.sql.SparkSession
  * that determines the number of triangles passing through each vertex,
  * providing a measure of clustering.
  * We compute the triangle count of the social network dataset.
+  * 假设结点A和结点B是邻居。结点A的邻结点集合是{B，C，D，E}，结点B的邻结点集合是{A，C，E，F，G}，而它们的交集是{C，E}。交集中的结点是结点A和结点B的共同邻结点，所以有{A，B，C}和{A，B，E}两个三角形。
+  * 社交网络拥有越多的三角形，其联系也就业紧密。
  *
  * Note that `TriangleCount` requires the edges to be in canonical orientation (`srcId < dstId`)
  * and the graph to be partitioned using [`Graph.partitionBy`][Graph.partitionBy].
